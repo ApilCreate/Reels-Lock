@@ -1,0 +1,262 @@
+body {
+  font-family: -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 13px;
+  background: #1c1c1e;
+  color: #f5f5f7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────────────────────────
+   Reels & Shorts Lock — popup.css
+   macOS-style, improved readability
+───────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Layout ─────────────────────── */
+
+.container {
+  width: 320px;
+  padding: 20px;
+}
+
+/* ── Header ─────────────────────── */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #f5f5f7;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #8e8e93;
+  margin-top: 3px;
+}
+
+/* Status badge */
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #2c2c2e;
+  color: #8e8e93;
+  border: 1px solid #48484a;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* Add class "active" via JS when lock is ON */
+.badge.active {
+  background: #0a2e1a;
+  color: #30d158;
+  border-color: #1a5c32;
+}
+
+/* ── Cards ───────────────────────── */
+
+.card {
+  background: #2c2c2e;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #636366;
+  margin-bottom: 12px;
+}
+
+.hint {
+  font-size: 12px;
+  color: #636366;
+  line-height: 1.55;
+  margin-bottom: 14px;
+  margin-top: -6px;
+}
+
+/* ── Form ────────────────────────── */
+
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #aeaeb2;
+  margin-bottom: 6px;
+}
+
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  background: #1c1c1e;
+  border: 1px solid #48484a;
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #f5f5f7;
+  outline: none;
+  transition: border-color 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="password"]:focus,
+input[type="number"]:focus {
+  border-color: #0a84ff;
+}
+
+input::placeholder {
+  color: #48484a;
+}
+
+/* Inline row: label + short number input side by side */
+.field-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.field-inline label {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: #aeaeb2;
+}
+
+.field-inline input[type="number"] {
+  width: 72px;
+  text-align: center;
+}
+
+/* ── Buttons ──────────────────────── */
+
+button {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s, background 0.15s, transform 0.08s;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Primary — blue accent */
+button.primary {
+  background: #0a84ff;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+}
+
+button.primary:hover {
+  opacity: 0.88;
+}
+
+/* Secondary — ghost */
+button.secondary {
+  background: #1c1c1e;
+  color: #aeaeb2;
+  border: 1px solid #48484a;
+}
+
+button.secondary:hover {
+  background: #252527;
+}
+
+/* Full-width save button */
+button#savePassword {
+  width: 100%;
+  background: #1c1c1e;
+  color: #aeaeb2;
+  border: 1px solid #48484a;
+}
+
+button#savePassword:hover {
+  background: #252527;
+}
+
+/* Button pair */
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+/* ── Status messages ─────────────── */
+
+.status {
+  font-size: 12px;
+  color: #636366;
+  margin-top: 8px;
+  min-height: 16px;
+}
+
+.status.success {
+  color: #30d158;
+}
+
+.status.error {
+  color: #ff453a;
+}
+
+/* ── Current State card ──────────── */
+
+.card.small {
+  font-size: 13px;
+}
+
+.state-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.state-row + .state-row {
+  border-top: 1px solid #3a3a3c;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.state-key {
+  font-size: 13px;
+  color: #aeaeb2;
+}
+
+.state-val {
+  font-size: 13px;
+  font-weight: 500;
+  color: #f5f5f7;
+}
+

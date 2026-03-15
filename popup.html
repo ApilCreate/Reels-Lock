@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reels & Shorts Lock</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <h1>Reels & Shorts Lock</h1>
+          <p class="subtitle">Block Reels & Shorts with one switch.</p>
+        </div>
+        <div class="badge" id="badgeStatus">OFF</div>
+      </header>
+
+      <section class="card">
+        <h2>Master Password</h2>
+        <p class="hint">
+          Set this once. You will need it to enable or disable the lock.
+        </p>
+        <div class="field">
+          <label for="password">New password</label>
+          <input type="password" id="password" />
+        </div>
+        <button id="savePassword">Save Password</button>
+        <p id="passwordStatus" class="status"></p>
+      </section>
+
+      <section class="card">
+        <h2>Lock Controls</h2>
+        <div class="field">
+          <label for="lockPassword">Password</label>
+          <input type="password" id="lockPassword" />
+        </div>
+        <div class="field field-inline">
+          <label for="duration">Duration (minutes, optional)</label>
+          <input type="number" id="duration" min="0" placeholder="0 = until turned off" />
+        </div>
+        <div class="buttons">
+          <button id="enableLock" class="primary">Enable Lock</button>
+          <button id="disableLock" class="secondary">Disable Lock</button>
+        </div>
+        <p id="lockStatus" class="status"></p>
+      </section>
+
+      <section class="card small">
+        <h2>Current State</h2>
+        <p id="currentState">Loading...</p>
+      </section>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
+
